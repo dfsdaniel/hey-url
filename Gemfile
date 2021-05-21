@@ -13,6 +13,9 @@ gem 'rubocop-performance'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'
 
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+gem 'jsonapi-resources', '~> 0.10.5'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record

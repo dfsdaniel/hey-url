@@ -5,13 +5,22 @@ require 'rails_helper'
 RSpec.describe Url, type: :model do
   describe 'validations' do
     it 'validates original URL is a valid URL' do
-      skip 'add test'
+      invalid_url = Url.new(original_url: 'some/url')
+      expect(invalid_url).to_not be_valid
     end
 
     it 'validates short URL is present' do
-      skip 'add test'
+      url = Url.new(original_url: 'http://www.google.com')
+      url.generate_short_url_code()
+      
+      expect(url.short_url).to_not be_empty
     end
 
-    # add more tests
+    it 'validates short URL has correct length' do
+      url = Url.new(original_url: 'http://www.google.com')
+      url.generate_short_url_code()
+
+      expect(url.short_url.length).to eql(5)
+    end
   end
 end
